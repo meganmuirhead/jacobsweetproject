@@ -1,6 +1,25 @@
-div {
-  width: 20%;
+.container {
+  display: flex;
+  justify-content: center;
+}
+.list {
+  width: auto%;
+  height: auto;
   border-color: black;
   border-style: solid;
   display: inline-block;
+
+}
+.submitButton {
+  display: flex;
+  justify-content: center;
+}
+
+select {
+  border-style: none;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
 }
