@@ -1,19 +1,17 @@
 <section class="container">
   <div>
-    <select id="leftValues" size="5" multiple>
-      <option *ngFor="let option1 of options1"> {{ option1.number }}  </option>
+    <select [(ngModel)]="selectedOptionsLeft" id="leftValues" size="5" multiple>
+      <option *ngFor="let option1 of optionsLeft"> {{ option1.number }}  </option>
 
     </select>
   </div>
   <div>
-    <!--<input type="button" id="btnLeft" value="&lt;&lt;" />-->
-    <button onclick="moveSelectedLeft()"><i class="fa fa-arrow-left"></i></button>
-    <button onclick="moveSelectedRight()"><i class="fa fa-arrow-right"></i></button>
-    <!--<input type="button" id="btnRight" value="&gt;&gt;" />-->
+    <button (click)="moveSelectedLeft()"><i class="fa fa-arrow-left"></i></button>
+    <button (click)="moveSelectedRight()"><i class="fa fa-arrow-right"></i></button>
   </div>
   <div>
-    <select [(ngModel)]="selectedOptions" id="rightValues" size="4" multiple>
-      <option *ngFor="let option2 of options2" value="{{option2.number}}"> {{ option2.number }}  </option>
+    <select [(ngModel)]="selectedOptionsRight" id="rightValues" size="4" multiple>
+      <option *ngFor="let option2 of optionsRight" value="{{option2.number}}"> {{ option2.number }}  </option>
 
     </select>
     <div>
@@ -24,6 +22,6 @@
 
 <div>
     <pre>
-      selected options: {{ selectedOptions | json }}
+      selected options: {{ selectedOptionsRight | json }}
   </pre>
 </div>

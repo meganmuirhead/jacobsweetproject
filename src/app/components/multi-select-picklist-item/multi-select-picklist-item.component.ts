@@ -7,28 +7,32 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MultiSelectPicklistItemComponent implements OnInit {
 
-  options1: Array<{ number: number }>;
-  options2: Array<{ number: number }>;
+  optionsLeft: Array<{ number: number }>;
+  optionsRight: Array<{ number: number }>;
   selectedOptionsRight;
   selectedOptionsLeft;
 
   constructor() {
   }
 
-  moveSelectedLeft(item) {
+  moveSelectedLeft() {
+    this.optionsLeft.map(item => {
+      return {
+        number: item.number
+      };
+    }).forEach(item => this.optionsRight.push(item));
+    console.log(JSON.stringify(this.optionsRight));
   }
-
-  moveSelectedRight(item) {
+  moveSelectedRight() {
+    console.log('button working');
   }
 
   ngOnInit() {
-    this.options1 = [{number: 1},
+    this.optionsLeft = [{number: 1},
       {number: 2},
       {number: 3},
       {number: 4}];
-    this.options2 = [{number: 1},
-      {number: 2},
-      {number: 3},
-      {number: 4}];
+    this.optionsRight = [];
+
   }
 }
