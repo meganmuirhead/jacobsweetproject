@@ -9,18 +9,17 @@ import {
   MatCheckboxModule,
   MatFormFieldModule,
   MatSelectModule,
-  MatTableDataSource,
   MatTableModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {SelectionModel} from '@angular/cdk/collections';
-import { MultiSelectListComponent } from './components/multi-select-list/multi-select-list.component';
+import { MultiSelectPicklistItemComponent } from './components/multi-select-picklist-item/multi-select-picklist-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DropDownComponent,
-    MultiSelectListComponent
+    MultiSelectPicklistItemComponent
   ],
   imports: [
     BrowserModule,

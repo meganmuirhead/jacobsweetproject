@@ -1,0 +1,25 @@
+body {
+  padding: 0px;
+  magin: 0px;
+}
+
+select, input {
+  width: 100px;
+  box-sizing: border-box;
+}
+section {
+  padding: 8px;
+  overflow: auto;
+}
+section > div {
+  float: left;
+  padding: 4px;
+}
+section > div + div {
+  width: 40px;
+  text-align: center;
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
