@@ -12,8 +12,8 @@
     <!--<input type="button" id="btnRight" value="&gt;&gt;" />-->
   </div>
   <div>
-    <select id="rightValues" size="4" multiple>
-      <option *ngFor="let option2 of options2"> {{ option2.number }}  </option>
+    <select [(ngModel)]="selectedOptions" id="rightValues" size="4" multiple>
+      <option *ngFor="let option2 of options2" value="{{option2.number}}"> {{ option2.number }}  </option>
 
     </select>
     <div>
@@ -21,3 +21,9 @@
     </div>
   </div>
 </section>
+
+<div>
+    <pre>
+      selected options: {{ selectedOptions | json }}
+  </pre>
+</div>
