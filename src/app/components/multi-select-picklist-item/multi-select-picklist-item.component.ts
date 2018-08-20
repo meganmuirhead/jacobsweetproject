@@ -9,23 +9,34 @@ export class MultiSelectPicklistItemComponent implements OnInit {
 
   optionsLeft: Array<{ number: number }>;
   optionsRight: Array<{ number: number }>;
-  selectedOptionsRight;
-  selectedOptionsLeft;
+  selectedOptionsRight: Array<string>;
+  selectedOptionsLeft: Array<string>;
 
   constructor() {
   }
 
-  moveSelectedLeft() {
-    this.optionsLeft.map(item => {
-      return {
-        number: item.number
-      };
-    }).forEach(item => this.optionsRight.push(item));
-    console.log(JSON.stringify(this.optionsRight));
-  }
   moveSelectedRight() {
-    console.log('button working');
-  }
+    for (let i = 0; i <= this.selectedOptionsLeft.length; i++) {
+      for (let x = 0; x <= this.optionsLeft.length; x++) {
+        console.log(this.optionsLeft);
+        console.log(this.optionsLeft[x]);
+        if (parseInt(this.selectedOptionsLeft[i]) === this.optionsLeft[x].number) {
+
+      console.log('jacob really loves megan');
+        }
+      }
+      }
+    }
+
+  // moveSelectedLeft(){
+  //   console.log('button working');
+  //   this.optionsRight.map(item => {
+  //     return {
+  //       number: item.number
+  //     };
+  //   }).forEach( item => this.selectedOptionsLeft.push(item));
+  //   console.log(JSON.stringify(this.selectedOptionsLeft));
+  // }
 
   ngOnInit() {
     this.optionsLeft = [{number: 1},

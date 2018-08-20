@@ -1,7 +1,7 @@
 <section class="container">
   <div>
     <select [(ngModel)]="selectedOptionsLeft" id="leftValues" size="5" multiple>
-      <option *ngFor="let option1 of optionsLeft"> {{ option1.number }}  </option>
+      <option *ngFor="let option1 of optionsLeft" value="{{option1.number}}"> {{ option1.number }}  </option>
 
     </select>
   </div>
@@ -22,6 +22,9 @@
 
 <div>
     <pre>
-      selected options: {{ selectedOptionsRight | json }}
+      selected options right: {{ selectedOptionsRight | json }}
+
+      selected options: left {{ selectedOptionsLeft | json }}
+
   </pre>
 </div>
