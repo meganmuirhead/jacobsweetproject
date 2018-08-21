@@ -18,25 +18,28 @@ export class MultiSelectPicklistItemComponent implements OnInit {
   moveSelectedRight() {
     for (let i = 0; i <= this.selectedOptionsLeft.length; i++) {
       for (let x = 0; x <= this.optionsLeft.length; x++) {
-        console.log(this.optionsLeft);
-        console.log(this.optionsLeft[x]);
+        console.log('this 1' + this.optionsLeft);
+        console.log('this 2' + this.optionsLeft[x]);
         if (parseInt(this.selectedOptionsLeft[i]) === this.optionsLeft[x].number) {
+          console.log('selected option', + this.selectedOptionsLeft[i]);
+          console.log('selected', + this.optionsLeft[x].number);
+          // this.selectedOptionsLeft.splice(i, 1);
+          let itemRemoved = this.optionsLeft.splice(x, 1);
+          console.log('before item removed');
+          console.log(itemRemoved[0].number);
+          this.optionsRight.push({number: itemRemoved[0].number})
 
-      console.log('jacob really loves megan');
+
         }
-      }
+        console.log('this is selected option on the left' + this.selectedOptionsLeft)
+
       }
     }
+  }
 
-  // moveSelectedLeft(){
-  //   console.log('button working');
-  //   this.optionsRight.map(item => {
-  //     return {
-  //       number: item.number
-  //     };
-  //   }).forEach( item => this.selectedOptionsLeft.push(item));
-  //   console.log(JSON.stringify(this.selectedOptionsLeft));
-  // }
+  moveSelectedLeft(){
+
+  }
 
   ngOnInit() {
     this.optionsLeft = [{number: 1},
