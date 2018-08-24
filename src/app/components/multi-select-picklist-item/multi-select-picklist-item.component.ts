@@ -17,21 +17,26 @@ export class MultiSelectPicklistItemComponent implements OnInit {
 
   moveSelectedRight() {
     for (let i = 0; i <= this.selectedOptionsLeft.length; i++) {
-      for (let x = 0; x <= this.optionsLeft.length; x++) {
+      let copyOfArray = this.optionsLeft.concat(this.optionsLeft)
+      // this.copyOfArray = [this.optionsLeft];
+      for (let x = 0; x <= copyOfArray.length; x++) {
         console.log('this 1' + this.optionsLeft);
         console.log('this 2' + this.optionsLeft[x]);
-        if (parseInt(this.selectedOptionsLeft[i]) === this.optionsLeft[x].number) {
-          console.log('selected option', + this.selectedOptionsLeft[i]);
-          console.log('selected', + this.optionsLeft[x].number);
-          // this.selectedOptionsLeft.splice(i, 1);
+        if (parseInt(this.selectedOptionsLeft[i]) === copyOfArray[x].number) {
+          console.log('selected option index', + this.selectedOptionsLeft[i]);
+          console.log('option left', + this.optionsLeft[x].number);
           let itemRemoved = this.optionsLeft.splice(x, 1);
           console.log('before item removed');
-          console.log(itemRemoved[0].number);
+          console.log('whatever  number i selected and  removed' + itemRemoved[0].number);
+          // this.optionsRight.push(itemRemoved);
+
           this.optionsRight.push({number: itemRemoved[0].number})
 
+          console.log('this is before the loop ends' + this.optionsLeft.length);
 
         }
         console.log('this is selected option on the left' + this.selectedOptionsLeft)
+        console.log('this after i went through' + this.optionsLeft.length);
 
       }
     }
